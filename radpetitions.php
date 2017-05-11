@@ -35,3 +35,11 @@ function radpets_deactivation()
     flush_rewrite_rules();
 }
 register_deactivation_hook( __FILE__, 'radpets_deactivation' );
+
+
+function radpets_uninstall()
+{
+    // uninstall cleanup
+}
+
+register_uninstall_hook(__FILE__, 'radpets_uninstall');
