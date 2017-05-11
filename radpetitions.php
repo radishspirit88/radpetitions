@@ -26,3 +26,12 @@ function radpets_install()
     flush_rewrite_rules();
 }
 register_activation_hook( __FILE__, 'radpets_install' );
+
+function radpets_deactivation()
+{
+    // our post type will be automatically removed, so no need to unregister it
+
+    // clear the permalinks to remove our post type's rules
+    flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'radpets_deactivation' );
